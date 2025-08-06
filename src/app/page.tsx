@@ -59,7 +59,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:max-w-none mt-12">
+            <div className="mx-auto grid max-w-5xl items-center gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:max-w-none mt-12">
               <Card className="hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
                   <div className="p-3 rounded-full bg-primary/10 w-fit">
