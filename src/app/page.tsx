@@ -33,7 +33,7 @@ export default function Home() {
                 </div>
               </div>
               <Image
-                src="/robot.png"
+                src="/robot.jpg"
                 width="600"
                 height="400"
                 alt="Hero"

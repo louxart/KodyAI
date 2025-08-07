@@ -49,7 +49,7 @@ export function ChatInterface() {
         title: 'Error',
         description: result.error,
       });
-      setMessages(prev => prev.slice(0, -1)); // Remove user message if AI fails
+      setMessages(prev => prev.slice(0, -1)); 
     } else if (result.response) {
       const assistantMessage: Message = { role: 'assistant', content: result.response };
       setMessages((prev) => [...prev, assistantMessage]);
@@ -86,7 +86,7 @@ export function ChatInterface() {
               </div>
               {message.role === 'user' && (
                 <Avatar className="h-9 w-9 border">
-                    <AvatarImage src="https://placehold.co/40x40.png" alt="User" data-ai-hint="person avatar"/>
+                    <AvatarImage src="/images.jpg" alt="User" data-ai-hint="person avatar"/>
                     <AvatarFallback><User className="h-5 w-5"/></AvatarFallback>
                 </Avatar>
               )}
