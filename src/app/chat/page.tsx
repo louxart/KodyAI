@@ -14,7 +14,7 @@ export default function ChatPage() {
         </Link>
         <div className="flex items-center gap-4">
           <Avatar className="h-9 w-9">
-            <AvatarImage src="https://placehold.co/40x40.png" alt="User" data-ai-hint="person avatar"/>
+            <AvatarImage src="/image.jpg" alt="User" data-ai-hint="person avatar"/>
             <AvatarFallback>U</AvatarFallback>
           </Avatar>
           <Button variant="ghost" size="icon" asChild>
