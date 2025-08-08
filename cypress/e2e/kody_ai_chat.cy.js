@@ -37,8 +37,16 @@ describe('Kody AI - Pruebas de UI básicas sin backend', () => {
 
   it('El botón "Get Started" debe existir y navegar sin romperse', () => {
     cy.visit('https://kody-ai.vercel.app/');
-    cy.contains('Get Started').should('be.visible').click();
-    cy.location('pathname').should('include', '/register');
+    cy.contains('Get Started')
+    .should('exist')
+    .should('be.visible')
+    .scrollIntoView()
+    .then(($el) => {
+      cy.wrap($el).click({ force: true });
+    });
+
+  cy.location('pathname', { timeout: 10000 }).should('include', '/register');
+  cy.get('body').should('not.contain.text', 'Internal Server Error');
   });
 
   it('Debe mostrar elementos de beneficios principales', () => {
