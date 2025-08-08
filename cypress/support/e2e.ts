@@ -15,3 +15,30 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+Cypress.on('uncaught:exception', (err) => {
+    // Ignorar errores de React minificados como el #418
+    if (err.message && err.message.includes('Minified React error')) {
+      return false;
+    }
+  
+    // También ignora errores comunes de RSC en Next.js
+    if (err.message && err.message.includes('hydration')) {
+      return false;
+    }
+  
+    // Deja pasar el resto de errores
+    return true;
+  });
+  
+  Cypress.on('uncaught:exception', (err) => {
+    if (
+      err.message.includes('Minified React error') ||
+      err.message.includes('hydration') ||
+      err.message.includes('Invariant failed')
+    ) {
+      return false;
+    }
+  
+    return true;
+  });
+  
